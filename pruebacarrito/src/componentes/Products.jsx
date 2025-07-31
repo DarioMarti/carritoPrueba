@@ -1,13 +1,9 @@
+import { useContext } from "react"
 import { Product  } from "./product"
-import {products as initialProducts} from "../mocks/products.json"
-import { useState } from "react"
+import { productContext } from "../contexto/productoContexto"
 export const Products = ()=>{
 
-const [products] = useState(initialProducts);
-const [filter, setFilter] = useState({
-    category: "all",
-    price: 50
-  })
+const {products, filter} = useContext(productContext)
 
   const filtrarProducto = (products)=>{
     return products.filter(product=>{
@@ -21,7 +17,7 @@ const [filter, setFilter] = useState({
         <main className="flex gap-6 px-24 flex-wrap justify-center">
            {filtradosProductos .map(product=>{
            return(
-             <Product title={product.title} thumbnail={product.thumbnail} price={product.price}></Product>
+             <Product key={product.id} title={product.title} thumbnail={product.thumbnail} price={product.price}></Product>
            )
            })}
         </main>

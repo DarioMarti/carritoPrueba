@@ -1,14 +1,17 @@
-import { useState } from "react"
 import { Products } from "./componentes/products"
-
+import { Header } from "./componentes/Header"
+import { ProductoContexto } from "./contexto/productoContexto"
 
 function App() { 
 
 
   return (
     <>
+    <ProductoContexto>
+      <Header/>
       <h1 className="bg-black text-white font-bold p-12 m-12">Lista de productos</h1>
-      <Products>  </Products>
+      <Products/>
+    </ProductoContexto>
     </>
   )
 }
