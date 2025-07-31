@@ -1,11 +1,13 @@
-import {products as initialProducts} from "../mocks/products.json"
+//import {products as initialProducts} from "../mocks/products.json"
 import { useState, createContext } from "react"
+import { usePeticionApi } from "../componentes/PeticionApi";
+
 export const productContext = createContext();
 
 export const ProductoContexto= ({children})=>{
-
-    const [products] = useState(initialProducts);
-const [filter, setFilter] = useState({
+    const products = usePeticionApi();
+   // const [products] = useState(initialProducts);
+    const [filter, setFilter] = useState({
     category: "all",
     price: 0
   })
