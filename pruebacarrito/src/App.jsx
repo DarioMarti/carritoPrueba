@@ -9,7 +9,7 @@ function App() {
     <>
     <ProductoContexto>
       <Header/>
-      <h1 className="bg-black text-white font-bold p-12 m-12">Lista de productos</h1>
+      <h1 className="bg-black text-white font-bold p-12 m-12 text-center text-2xl">Lista de productos</h1>
       <Products/>
     </ProductoContexto>
     </>
