@@ -4,7 +4,7 @@ import { Products } from "./products";
 import { FaShoppingCart } from "react-icons/fa";
 
 export const Header = () => {
-  const { setFilter, products, setProductosOrdenados } = useContext(productContext);
+  const { setFilter, products, setProductosOrdenados, carrito } = useContext(productContext);
   const [inputCategory, setInputCategory] = useState("");
   const [valor, setValor] = useState(0)
 
@@ -51,7 +51,6 @@ const ordenarProducto=(e)=>{
 }
 
 
-
   return (
     <header className="w-full py-8 p-12 bg-black/80 text-white flex items-center justify-between">
       <div className="flex gap-6 items-center w-1/3 justify-between">
@@ -62,7 +61,7 @@ const ordenarProducto=(e)=>{
         <div className="relative">
         <FaShoppingCart className="text-3xl " />
         <div className="size-6 rounded-full bg-amber-600 flex justify-center items-center text-xs absolute -top-2 -right-3">
-          0
+          {carrito.length}
         </div>
         </div>
       </div>
